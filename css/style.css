@@ -401,6 +401,10 @@ input:-webkit-autofill:active {
   position: relative;
   margin-bottom: 20px;
   z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .plan__item:hover {
@@ -420,11 +424,6 @@ input:-webkit-autofill:active {
   font-weight: 500;
   text-transform: uppercase;
   padding: 25px 0;
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 .plan__price {
@@ -1147,9 +1146,19 @@ input:-webkit-autofill:active {
     font-size: 14px;
   }
   .plan__item:hover {
-    -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-            transform: scale(0.9);
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+  .plan__item.scale {
+    -webkit-transform: scale(1.09);
+        -ms-transform: scale(1.09);
+            transform: scale(1.09);
+  }
+  .plan__item {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
   }
 }
 
