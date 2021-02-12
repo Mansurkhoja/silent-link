@@ -392,9 +392,11 @@ input:-webkit-autofill:active {
   border-radius: 0.25rem;
   cursor: default;
   margin: 0 10px;
-  -webkit-transition: all .35s ease-in;
-  -o-transition: all .35s ease-in;
-  transition: all .35s ease-in;
+  -webkit-transition: -webkit-box-shadow 0.35s ease-in, -webkit-transform 0.35s ease-in;
+  transition: -webkit-box-shadow 0.35s ease-in, -webkit-transform 0.35s ease-in;
+  -o-transition: box-shadow 0.35s ease-in, transform 0.35s ease-in;
+  transition: box-shadow 0.35s ease-in, transform 0.35s ease-in;
+  transition: box-shadow 0.35s ease-in, transform 0.35s ease-in, -webkit-box-shadow 0.35s ease-in, -webkit-transform 0.35s ease-in;
   background-color: #ffffff;
   max-width: 300px;
   margin: 0 auto;
@@ -407,16 +409,57 @@ input:-webkit-autofill:active {
           user-select: none;
 }
 
+.plan__item:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 65px;
+  height: 100%;
+  -webkit-transition: max-height .35s ease-out;
+  -o-transition: max-height .35s ease-out;
+  transition: max-height .35s ease-out;
+}
+
+.plan__item--start::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a8ffa7), to(rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(top, #a8ffa7, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom, #a8ffa7, rgba(255, 255, 255, 0));
+}
+
+.plan__item--best::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff9a7), to(rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(top, #fff9a7, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom, #fff9a7, rgba(255, 255, 255, 0));
+}
+
+.plan__item--prof::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a7d2ff), to(rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(top, #a7d2ff, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom, #a7d2ff, rgba(255, 255, 255, 0));
+}
+
 .plan__item:hover {
-  -webkit-transition: all .35s linear;
-  -o-transition: all .35s linear;
-  transition: all .35s linear;
+  -webkit-transition: -webkit-box-shadow 0.35s ease-out, -webkit-transform 0.35s ease-out;
+  transition: -webkit-box-shadow 0.35s ease-out, -webkit-transform 0.35s ease-out;
+  -o-transition: box-shadow 0.35s ease-out, transform 0.35s ease-out;
+  transition: box-shadow 0.35s ease-out, transform 0.35s ease-out;
+  transition: box-shadow 0.35s ease-out, transform 0.35s ease-out, -webkit-box-shadow 0.35s ease-out, -webkit-transform 0.35s ease-out;
   z-index: 2;
   -webkit-transform: scale(1.09);
       -ms-transform: scale(1.09);
           transform: scale(1.09);
   -webkit-box-shadow: 1px 1px 30px rgba(247, 147, 26, 0.2);
           box-shadow: 1px 1px 30px rgba(247, 147, 26, 0.2);
+}
+
+.plan__item:hover::after {
+  max-height: 100%;
+  -webkit-transition: max-height .35s ease-out;
+  -o-transition: max-height .35s ease-out;
+  transition: max-height .35s ease-out;
 }
 
 .plan__name {
@@ -1134,6 +1177,8 @@ input:-webkit-autofill:active {
 @media screen and (max-width: 768px) {
   .intro {
     font-size: 20px;
+    min-height: auto;
+    padding: 40px 20px;
   }
   .how__item-title,
   .faq__question {
@@ -1149,16 +1194,34 @@ input:-webkit-autofill:active {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .plan__item:hover::after {
+    max-height: 65px;
   }
   .plan__item.scale {
     -webkit-transform: scale(1.09);
         -ms-transform: scale(1.09);
             transform: scale(1.09);
+    -webkit-box-shadow: 1px 1px 30px rgba(247, 147, 26, 0.2);
+            box-shadow: 1px 1px 30px rgba(247, 147, 26, 0.2);
+  }
+  .plan__item.scale::after {
+    max-height: 100% !important;
+    -webkit-transition: max-height .35s ease-out;
+    -o-transition: max-height .35s ease-out;
+    transition: max-height .35s ease-out;
   }
   .plan__item {
+    -webkit-box-shadow: none;
+            box-shadow: none;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
+  }
+  .plan__item::after {
+    max-height: 65px !important;
   }
 }
 
