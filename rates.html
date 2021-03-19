@@ -65,7 +65,7 @@
                 <h3 class="title">
                     Global Mobile 4G/5G Data Rates
                 </h3>
-                <div class="rate__inner row justify-content-center">
+                <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-7 col-md-8 col-12">
                         <div class="rate__about">
                             <p>Pay as you go</p>
@@ -79,6 +79,12 @@
                             <select class="custom-select form-control" id="selectCountry">
                                 <option value="choose" disabled selected>Choose your country</option>
                             </select>
+                            <div class="form-loader loading" id="rateLoader">
+                                <svg class="form-loader-icon" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 50 50">
+                                    <circle cx="25" cy="25" r="23"></circle>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12">
@@ -87,11 +93,18 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="selectCountryOld" class="form-label">Choose your country or scroll down to find your
+                            <label for="selectCountryOld" class="form-label">Choose your country or scroll down to find
+                                your
                                 country old version</label>
                             <select class="custom-select form-control" id="selectCountryOld">
                                 <option value="choose" disabled selected>Choose your country</option>
                             </select>
+                            <div class="form-loader loading" id="rateOldLoader">
+                                <svg class="form-loader-icon" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 50 50">
+                                    <circle cx="25" cy="25" r="23"></circle>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12">
