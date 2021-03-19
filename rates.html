@@ -72,39 +72,30 @@
                             <p>Worldwide coverage at low prices</p>
                         </div>
                     </div>
-                    <div class="col-12 mb-4">
+                    <div class="col-12">
                         <div class="form-group">
-                            <label for="selctCountry" class="form-label">Choose your country or scroll down to find your country</label>
+                            <label for="selctCountry" class="form-label">Choose your country or scroll down to find your
+                                country</label>
                             <select class="custom-select form-control" id="selectCountry">
-                                <option value="all" selected>Show all country</option>
-                                <option value="ar">ARUBA</option>
-                                <option value="tun">TUNISIA</option>
-                                <option value="tj">TAJIKISTAN</option>
+                                <option value="choose" disabled selected>Choose your country</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-12">
-                        <div class="rate__table">
-                            <table class="table table-hover table-bordered">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">Mobile Network</th>
-                                        <th scope="col">Price per 1 MB</th>
-                                    </tr>
-                                </thead>
-                                <tr data-country="ar">
-                                    <td>ARUBA DIGICEL MOBILE - (Digicel Mossel) [JAMDC]</td>
-                                    <td>0.0368</td>
-                                </tr>
-                                <tr data-country="tun">
-                                    <td>TUNISIA TUNISIANA MOBILE - Orascom Telecom Tunisie (TUNISIANA) [TUNTA] </td>
-                                    <td>5.3537</td>
-                                </tr>
-                                <tr data-country="tj">
-                                    <td>TAJIKISTAN INDIGO MOBILE - Indigo Tajikistan [TJKIT]</td>
-                                    <td>0.41</td>
-                                </tr>
-                            </table>
+                        <div class="rate__inner" id="rate-new">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="selectCountryOld" class="form-label">Choose your country or scroll down to find your
+                                country old version</label>
+                            <select class="custom-select form-control" id="selectCountryOld">
+                                <option value="choose" disabled selected>Choose your country</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="rate__inner" id="rate-old">
                         </div>
                     </div>
                 </div>
@@ -172,6 +163,7 @@
                 </div>
             </div>
         </footer>
+
     </div>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/svg4everybody.min.js"></script>
